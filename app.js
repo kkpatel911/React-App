@@ -1,8 +1,9 @@
-const Header = () => {
+const Header = (props) => {
+    console.log(props);
     return (
         <header>
-            <h1>Score Board</h1>
-            <span className="stats"> Players: 1</span>
+            <h1>{props.title}</h1>
+            <span className="stats"> Players: {props.totalPlayers}</span>
         </header>
     )
 }
@@ -13,20 +14,31 @@ const Player = () => {
             <span className="player-name">
                 Kishan
             </span>
-
-
+            <Counter />
         </div>
     )
 }
 const Counter = () => {
-    <div className='counter'>
-        <button className='counter-action decrement'> - </button>
-        <span className='counter-score'> 20 </span>
-        <button className='counter-action increment'> + </button>
-    </div>
+    return (
+        <div className='counter'>
+            <button className='counter-action decrement'> - </button>
+            <span className='counter-score'> 20 </span>
+            <button className='counter-action increment'> + </button>
+        </div>
+    );
+}
+
+const App = () => {
+    return (
+        <div className="scoreboard">
+            <Header title='Scoreboard' totalPlayers={1} />
+            {/*  Players list*/}
+            <Player />
+        </div>
+    );
 }
 
 ReactDOM.render(
-    <Player />,
+    <App />,
     document.getElementById('root')
 )

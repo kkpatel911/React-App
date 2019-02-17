@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-
     "start": "live-server --mode development --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
