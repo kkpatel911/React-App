@@ -17,7 +17,7 @@ const Counter = props => {
         onClick={() => props.changeScore(index, +1)}
       >
         {" "}
-        +{" "}
+        ×{" "}
       </button>
     </div>
   );
