@@ -1,29 +1,32 @@
-import React from "react";
-
+import React, { PureComponent } from "react";
 import Counter from "./Counter";
+import Icon from "./Icon";
 
-const Player = props => {
-  console.log(props.name);
-
-  return (
-    <div className="player">
-      <span className="player-name">
-        <button
-          className="remove-player"
-          onClick={() => props.removePlayer(props.id)}
-        >
-          {" "}
-          x
-        </button>
-        {props.name}
-      </span>
-      <Counter
-        score={props.score}
-        changeScore={props.changeScore}
-        index={props.index}
-      />
-    </div>
-  );
-};
+class Player extends PureComponent {
+  render() {
+    const {
+      name,
+      score,
+      changeScore,
+      index,
+      id,
+      removePlayer,
+      isHighScore
+    } = this.props;
+    return (
+      <div className="player">
+        <span className="player-name">
+          <button className="remove-player" onClick={() => removePlayer(id)}>
+            {" "}
+            ✂
+          </button>
+          <Icon isHighScore={isHighScore} />
+          {name}
+        </span>
+        <Counter score={score} changeScore={changeScore} index={index} />
+      </div>
+    );
+  }
+}
 
 export default Player;

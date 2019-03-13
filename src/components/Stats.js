@@ -8,19 +8,18 @@ const Stats = props => {
   }, 0);
 
   return (
-    <tabel className="stats">
+    <table className="stats">
       <tbody>
         <tr>
           <td>Players:</td>
           <td>{totalPlayer}</td>
         </tr>
-
         <tr>
           <td>Total Points:</td>
           <td>{totalPoints}</td>
         </tr>
       </tbody>
-    </tabel>
+    </table>
   );
 };
 
