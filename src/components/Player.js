@@ -1,7 +1,10 @@
 import React from "react";
+
 import Counter from "./Counter";
 
 const Player = props => {
+  console.log(props.name);
+
   return (
     <div className="player">
       <span className="player-name">
